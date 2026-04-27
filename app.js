@@ -1,8 +1,60 @@
-let cashInput = document.getElementById("cash");
-let burnRateInput = document.getElementById("burnRate");
-let submit = document.getElementById("bttn");
+let start=document.getElementById("startBtn");
+let pg=document.getElementById("Start");
 
-let container = document.getElementsByClassName("container")[0];
+start.addEventListener("click", () => {// Create main container
+start.remove();
+pg.remove();
+let container = document.createElement("div");
+container.className = "container";
+
+// Title
+let title = document.createElement("h1");
+title.textContent = "Runway Calculator";
+
+// Currency selector
+let currencySelect = document.createElement("select");
+currencySelect.id = "currency";
+
+let inrOption = document.createElement("option");
+inrOption.value = "INR";
+inrOption.textContent = "₹ INR";
+
+let usdOption = document.createElement("option");
+usdOption.value = "USD";
+usdOption.textContent = "$ USD";
+
+currencySelect.appendChild(inrOption);
+currencySelect.appendChild(usdOption);
+
+// Cash input
+let cashInput = document.createElement("input");
+cashInput.type = "number";
+cashInput.id = "cash";
+cashInput.placeholder = "Total Cash on Hand ($/₹)";
+cashInput.required = true;
+
+// Burn rate input
+let burnRateInput = document.createElement("input");
+burnRateInput.type = "number";
+burnRateInput.id = "burnRate";
+burnRateInput.placeholder = "Monthly Burn Rate ($/₹)";
+burnRateInput.required = true;
+
+// Button
+let submit = document.createElement("button");
+submit.id = "bttn";
+submit.textContent = "CALCULATE RUNWAY";
+
+// Append all elements
+container.appendChild(title);
+container.appendChild(currencySelect);
+container.appendChild(cashInput);
+container.appendChild(burnRateInput);
+container.appendChild(submit);
+
+// Add container to page
+document.body.appendChild(container);
+
 
 submit.addEventListener("click", () => {
     // Remove old result if it exists
@@ -149,4 +201,5 @@ else if (runwayMonths >= 3) {
 else {
     progressBar.style.background = "linear-gradient(90deg, #ff3b3b, #ff0000)";
 }
+});
 });
