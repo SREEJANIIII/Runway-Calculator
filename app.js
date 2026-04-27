@@ -45,12 +45,12 @@ submit.addEventListener("click", () => {
 
     // Financial health states
     if (runwayMonths > 6) {
+        container.style.backgroundColor = "#000000";
         status.textContent = "SAFE ZONE ✅";
         status.classList.add("safe");
         status.style.backgroundColor = "#042500";
         monthsLeft.classList.add("safe");
         container.style.borderColor = "#3a972e";
-        container.style.backgroundColor = "#000000";
         document.body.style.backgroundImage="url('bg1.png')";
         document.body.style.backgroundSize="cover";
     } 
