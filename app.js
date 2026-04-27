@@ -45,7 +45,7 @@ submit.addEventListener("click", () => {
 
     // Financial health states
     if (runwayMonths > 6) {
-        container.style.backgroundColor = "#000000";
+        
         status.textContent = "SAFE ZONE ✅";
         status.classList.add("safe");
         status.style.backgroundColor = "#042500";
