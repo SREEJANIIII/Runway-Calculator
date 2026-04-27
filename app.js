@@ -50,7 +50,7 @@ submit.addEventListener("click", () => {
     return new Intl.NumberFormat(locale, {
         style: "currency",
         currency: selectedCurrency,
-        maximumFractionDigits: 0
+        maximumFractionDigits: 2
     }).format(amount);
 }
     // Calculations
