@@ -117,22 +117,14 @@ button:hover {
     text-shadow: 0 0 12px #ff0000;
 }
 
-/* Mobile responsiveness */
 @media (max-width: 600px) {
     .container {
-        padding: 25px;
-        gap: 15px;
-    }
-
-    h1 {
-        font-size: 1.6em;
+        width: 95%;
+        padding: 20px;
     }
 
     input, button {
+        width: 100%;
         font-size: 1em;
-    }
-
-    #monthsLeft {
-        font-size: 1.6em;
     }
 }
