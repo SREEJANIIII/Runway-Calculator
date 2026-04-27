@@ -71,38 +71,77 @@ submit.addEventListener("click", () => {
 
     // Financial health states
     if (runwayMonths > 12) {
+        document.body.style.backgroundImage = "url('bg1.png')";
         status.textContent = "SAFE ZONE ✅";
         status.classList.add("safe");
         monthsLeft.classList.add("safe");
         status.style.backgroundColor = "#042500";
         container.style.borderColor = "#e47317";
-        document.body.style.backgroundImage = "url('bg1.png')";
     } 
     else if (runwayMonths >= 6) {
+        document.body.style.backgroundImage = "url('bg2.png')";
         status.textContent = "MODERATE ZONE ⚠️";
         status.classList.add("warning");
         monthsLeft.classList.add("warning");
         status.style.backgroundColor = "#2c2c00";
         container.style.borderColor = "#ffd700";
-        document.body.style.backgroundImage = "url('bg2.png')";
+
     } 
     else if (runwayMonths >= 3) {
+        document.body.style.backgroundImage = "url('bg4.png')";
         status.textContent = "WARNING ZONE ⚠️";
         status.classList.add("warning");
         monthsLeft.classList.add("warning");
         status.style.backgroundColor = "#4a2200";
         container.style.borderColor = "#ff9900";
-        document.body.style.backgroundImage = "url('bg4.png')";
     } 
     else {
+        document.body.style.backgroundImage = "url('bg3.png')";
         status.textContent = "DANGER ZONE 🚨";
         status.classList.add("danger");
         monthsLeft.classList.add("danger");
         status.style.backgroundColor = "#2c0000";
         container.style.borderColor = "#ff3b3b";
-        document.body.style.backgroundImage = "url('bg3.png')";
         daysLeft.textContent += " — Immediate cost reduction recommended!";
     }
 
     document.body.style.backgroundSize = "cover";
+    // Create progress bar container
+let progressContainer = document.createElement("div");
+let progressBar = document.createElement("div");
+let progressText = document.createElement("p");
+
+// Assign IDs/classes
+progressContainer.className = "progress-container";
+progressBar.id = "progress-bar";
+progressText.id = "progress-text";
+
+// Nest elements
+progressContainer.appendChild(progressBar);
+result.appendChild(progressContainer);
+result.appendChild(progressText);
+
+// Runway progress logic
+let maxRunway = 12; // 12 months is the max for full bar
+let progressPercent = Math.min((runwayMonths / maxRunway) * 100, 100);
+
+// Set width
+progressBar.style.width = `${progressPercent}%`;
+
+// Display text
+progressText.textContent = `${runwayMonths.toFixed(1)} / ${maxRunway} months`;
+
+// Dynamic bar colors
+if (runwayMonths > 12) {
+    progressBar.style.background = "linear-gradient(90deg, #00ff66, #00ffcc)";
+}
+else if (runwayMonths >= 6) {
+    progressBar.style.background = "linear-gradient(90deg, #ffd700, #ffcc00)";
+}
+else if (runwayMonths >= 3) {
+    progressBar.style.background = "linear-gradient(90deg, #ff9900, #ff6600)";
+}
+else {
+    progressBar.style.background = "linear-gradient(90deg, #ff3b3b, #ff0000)";
+}
 });
