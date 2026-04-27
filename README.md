@@ -17,6 +17,8 @@ In entrepreneurship, cash flow determines survival. This tool helps founders ins
 The application emphasizes both functionality and polished user experience, transforming a simple calculation into an actionable founder dashboard.
 
 ---
+## 🌐 Live Demo  
+[Launch Runway Calculator](https://sreejaniiii.github.io/Runway-Calculator/)
 
 # ✨ Features
 
