@@ -75,7 +75,7 @@ submit.addEventListener("click", () => {
         status.classList.add("safe");
         monthsLeft.classList.add("safe");
         status.style.backgroundColor = "#042500";
-        container.style.borderColor = "#3a972e";
+        container.style.borderColor = "#e47317";
         document.body.style.backgroundImage = "url('bg1.png')";
     } 
     else if (runwayMonths >= 6) {
@@ -92,7 +92,7 @@ submit.addEventListener("click", () => {
         monthsLeft.classList.add("warning");
         status.style.backgroundColor = "#4a2200";
         container.style.borderColor = "#ff9900";
-        document.body.style.backgroundImage = "url('bg2.png')";
+        document.body.style.backgroundImage = "url('bg4.png')";
     } 
     else {
         status.textContent = "DANGER ZONE 🚨";
