@@ -76,7 +76,7 @@ submit.addEventListener("click", () => {
         status.classList.add("safe");
         monthsLeft.classList.add("safe");
         status.style.backgroundColor = "#042500";
-        container.style.borderColor = "#e47317";
+        container.style.borderColor = "#4af158";
     } 
     else if (runwayMonths >= 6) {
         document.body.style.backgroundImage = "url('bg2.png')";
@@ -85,6 +85,7 @@ submit.addEventListener("click", () => {
         monthsLeft.classList.add("warning");
         status.style.backgroundColor = "#2c2c00";
         container.style.borderColor = "#ffd700";
+        daysLeft.textContent += " -- 💡 Reducing expenses could improve runway.";
 
     } 
     else if (runwayMonths >= 3) {
@@ -94,8 +95,10 @@ submit.addEventListener("click", () => {
         monthsLeft.classList.add("warning");
         status.style.backgroundColor = "#4a2200";
         container.style.borderColor = "#ff9900";
+        daysLeft.textContent += " -- Consider cost optimization!";
     } 
     else {
+        alert("🚨 DANGER ZONE: Immediate action required! 🚨");
         document.body.style.backgroundImage = "url('bg3.png')";
         status.textContent = "DANGER ZONE 🚨";
         status.classList.add("danger");
