@@ -257,29 +257,94 @@ button:active {
     color: white;
 }
 
-/* Mobile responsiveness */
 @media (max-width: 600px) {
+    body {
+        padding: 15px;
+        align-items: flex-start;
+    }
+
     .container {
-        width: 95%;
-        padding: 22px;
-        gap: 15px;
+        width: 100%;
+        max-width: 100%;
+        padding: 24px 18px;
+        gap: 18px;
+        margin-top: 30px;
+        border-radius: 16px;
     }
 
     h1 {
-        font-size: 1.8em;
+        font-size: 1.9em;
+        line-height: 1.3;
+        margin-bottom: 10px;
     }
 
+    #currency,
     input,
     button {
         width: 100%;
-        font-size: 1em;
+        font-size: 1rem;
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    input::placeholder {
+        font-size: 0.95rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 15px;
+        letter-spacing: 0.5px;
+    }
+
+    #result {
+        padding: 18px;
+        margin-top: 18px;
     }
 
     #monthsLeft {
-        font-size: 1.6em;
+        font-size: 1.7em;
+        line-height: 1.3;
     }
 
     #status {
-        font-size: 1em;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    #daysLeft,
+    #progress-text {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .progress-container {
+        height: 20px;
+        margin-top: 15px;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .hero {
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.1em;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .hero button {
+        width: 100%;
+        max-width: 280px;
+        margin-top: 15px;
     }
 }
