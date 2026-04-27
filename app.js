@@ -44,13 +44,15 @@ submit.addEventListener("click", () => {
 
     // Currency formatter
     function formatCurrency(amount) {
-        return new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "USD",
-            maximumFractionDigits: 0
-        }).format(amount);
-    }
+    let selectedCurrency = document.getElementById("currency").value;
+    let locale = selectedCurrency === "INR" ? "en-IN" : "en-US";
 
+    return new Intl.NumberFormat(locale, {
+        style: "currency",
+        currency: selectedCurrency,
+        maximumFractionDigits: 0
+    }).format(amount);
+}
     // Calculations
     let runwayMonths = cash / burnRate;
     let runwayDays = Math.floor(runwayMonths * 30);
