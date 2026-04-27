@@ -50,7 +50,7 @@ submit.addEventListener("click", () => {
     return new Intl.NumberFormat(locale, {
         style: "currency",
         currency: selectedCurrency,
-        maximumFractionDigits: 2
+        maximumFractionDigits: 0
     }).format(amount);
 }
     // Calculations
@@ -102,9 +102,11 @@ submit.addEventListener("click", () => {
         monthsLeft.classList.add("danger");
         status.style.backgroundColor = "#2c0000";
         container.style.borderColor = "#ff3b3b";
-        daysLeft.textContent += " — Immediate cost reduction recommended!";
+        if (runwayMonths < 1) {    
+            daysLeft.textContent += " -- CRITICAL CASHOUT ⚠️";
+        }
+        daysLeft.textContent += " -- Immediate cost reduction recommended!";
     }
-
     document.body.style.backgroundSize = "cover";
     // Create progress bar container
 let progressContainer = document.createElement("div");
